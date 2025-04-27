@@ -37,7 +37,7 @@ except Exception as e:
 
 # Page Logic
 if page == "Home":
-    st.write("Welcome to the Big Data Final Project App! 🚀")
+    st.write("Enhancing Real Estate Decision-Making 🚀")
     st.write("This app connects to MongoDB and Neo4j to explore data.")
     
 elif page == "MongoDB Data":
