@@ -4,6 +4,15 @@ from pymongo.errors import ConnectionFailure, OperationFailure
 import logging
 from datetime import datetime
 
+def load_mongo_data():
+    client = MongoClient("mongodb://localhost:27017/")  # or your MongoDB URI
+    db = client["your_database_name"]
+    collection = db["your_collection_name"]
+    
+    # Fetch documents
+    documents = list(collection.find({}, {'_id': 0}))  # Exclude the MongoDB _id field
+    return documents
+    
 # Set up logging for debugging and monitoring
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
