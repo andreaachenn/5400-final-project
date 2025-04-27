@@ -5,9 +5,9 @@ import logging
 from datetime import datetime
 
 def load_mongo_data():
-    client = MongoClient("mongodb://localhost:27017/")  # or your MongoDB URI
-    db = client["your_database_name"]
-    collection = db["your_collection_name"]
+    client = MongoClient("mongodb://localhost:27017/")
+    db = client["Reading cleaned data from Cleaned_data.csv"]
+    collection = db["Cleaned_data.csv", nrows=100000]
     
     # Fetch documents
     documents = list(collection.find({}, {'_id': 0}))  # Exclude the MongoDB _id field
